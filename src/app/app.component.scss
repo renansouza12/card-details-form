@@ -1,0 +1,11 @@
+#app{
+ display: flex;
+ justify-content: space-between;
+    img{
+        height: 100vh;
+    }
+    .card_form{
+        display: grid;
+        place-content: center;
+    }
+}

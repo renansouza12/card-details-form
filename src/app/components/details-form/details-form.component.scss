@@ -1,0 +1,78 @@
+@import url(../../../styles.scss);
+.details_form_container{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+
+    .field_input,.cvc_details{
+        display: flex;
+        flex-direction: column;
+    }
+    .inputs_details{
+        display: flex;
+        gap: 10px;
+        .date_details{
+            width: 50%;
+            margin-right: 10px;
+            .field_date{
+                display: flex;
+                gap: 10px;
+                .field_year, .field_month{
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                }
+    
+                .input_date{
+                    width: 100%;
+                }
+            }
+        }
+      
+        .cvc_details{
+            .input_date{
+                width: 100%;
+            }
+        }
+    }
+    label{
+        color: var(--Very-dark-violet) ;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.9rem;
+    }
+    input{
+        margin-top: 5px;
+        outline: none;
+        border: 1px solid var(--Light-grayish-violet);
+        border-radius: 5px;
+        font-size: 1rem;
+        padding: 0.7rem 1rem;
+    }
+    input::placeholder{
+        color: var(--Dark-grayish-violet);
+    }
+    input:focus{
+        border-color:hsl(249, 99%, 64%);
+    }
+    input.invalid{
+        border-color: var(--input-erro);
+    }
+    .erro{
+        color: var(--input-erro);
+        font-size: 0.8rem;
+    }
+
+    button{
+        background-color: var(--Very-dark-violet);
+        color:var(--White);
+        border-radius: 5px;
+        border: none;
+        padding: 1rem;
+        font-size: 1rem;
+        letter-spacing: 1px;
+        cursor: pointer;
+    }
+}
