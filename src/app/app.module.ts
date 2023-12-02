@@ -4,11 +4,13 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { DetailsFormComponent } from './components/details-form/details-form.component';
+import { ConfirmationMsgComponent } from './components/confirmation-msg/confirmation-msg.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    DetailsFormComponent
+    DetailsFormComponent,
+    ConfirmationMsgComponent
   ],
   imports: [
     BrowserModule,

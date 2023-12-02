@@ -1,0 +1,27 @@
+@import url(../../../styles.scss);
+.confirmation_message{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   gap: 1rem;
+   width: 30vw;
+
+   img{
+    width: 80px;
+    text-align: center;
+    margin-bottom: 1rem;
+   }
+   h2{
+    text-transform: uppercase;
+    font-size: 2rem;
+   }
+   p{
+    color: var(--Dark-grayish-violet);
+    font-size: 1.2rem;
+   }
+   button{
+    margin-top: 1rem;
+    width: 100%;
+   }
+}

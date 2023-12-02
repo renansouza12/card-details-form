@@ -22,13 +22,26 @@ export class DetailsFormComponent {
       cvc:['', [Validators.required,this.cvcValidation]],
   });
 
+
+  displayForm:boolean = true;
+  confirmationMsg:boolean = false;
+
   isSubmitted!:boolean;
   constructor(private fb: FormBuilder){}
   
   submit():void{
     console.log("submitted",this.registerForm.value,this.registerForm.invalid);
 
+    if(!this.registerForm.invalid){
+      this.displayForm = false;
+      this.confirmationMsg = true;
+    }
     this.isSubmitted = true;
+  }
+
+  messageConfirmation():void{
+    console.log('clicked');
+    
   }
 
   cardNumberValidation(control: { value: any; }) {
