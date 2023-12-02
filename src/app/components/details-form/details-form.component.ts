@@ -8,7 +8,12 @@ import { FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./details-form.component.scss']
 })
 export class DetailsFormComponent {
-   
+  name!:string;
+  cardNumber!:string;
+  month!:string;
+  year!:string;
+  cvc!:string;
+
   registerForm = this.fb.group({
       name:['', Validators.required],
       number:['',[Validators.required,this.cardNumberValidation]],
