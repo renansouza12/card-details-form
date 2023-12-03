@@ -5,7 +5,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 @Component({
   selector: 'app-details-form',
   templateUrl: './details-form.component.html',
-  styleUrls: ['./details-form.component.scss']
+  styleUrls: ['./details-form.component.scss','details-form-card.component.scss',
+  'details-form-card.responsive.component.scss']
 })
 export class DetailsFormComponent {
   name!:string;
@@ -39,9 +40,16 @@ export class DetailsFormComponent {
     this.isSubmitted = true;
   }
 
-  messageConfirmation():void{
+  btnConfirmation():void{
     console.log('clicked');
-    
+    this.displayForm = true;
+    this.confirmationMsg = false;
+
+    this.name = '';
+    this.cardNumber = '';
+    this.month = '';
+    this.year = '';
+    this.cvc = '';
   }
 
   cardNumberValidation(control: { value: any; }) {

@@ -1,0 +1,41 @@
+@media  (max-width: 1200px) {
+    .container{
+        .cards{
+            .card_front{
+                .card_front_content{
+                    padding: 1rem;
+                    .card_front_info{
+                        h3{
+                            font-size: 1.2rem;
+                            letter-spacing: 1px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+    
+
+@media  (max-width: 768px) {
+    .container{
+        .cards{
+            width: 500px;
+            display: flex;
+            transform: translateY(-50px);
+            .card_front{
+                .card_front_content{
+                    img{
+                        width: 50px;
+                    }
+                }
+            }
+            .card_back{
+                .card_back_content{
+                    top: 40%;
+                }
+            }
+        }
+    }
+}
+

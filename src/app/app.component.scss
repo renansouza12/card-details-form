@@ -1,12 +1,29 @@
 #app{
  display: flex;
  justify-content: space-between;
-    img{
+    .image_desktop{
         height: 100vh;
         width: 40vw;
+    }
+    .image_mobile{
+        display: none;
     }
     .card_form{
         display: grid;
         place-content: center;
     }
+}
+
+@media (max-width:768px) {
+    #app{
+        flex-direction: column;
+        .image_desktop{
+            display: none;
+        }
+        .image_mobile{
+            display: block;
+            width: 100vw;
+            height: 20vh;
+        }
+    }  
 }

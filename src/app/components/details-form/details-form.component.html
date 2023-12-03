@@ -88,7 +88,7 @@
     </form>
 
     <div *ngIf="confirmationMsg" class="confirmation_message">
-        <app-confirmation-msg />
+        <app-confirmation-msg (confirmation)="btnConfirmation()"/>
     </div>
 
 </div>
