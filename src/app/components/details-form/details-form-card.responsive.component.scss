@@ -20,10 +20,12 @@
 @media  (max-width: 768px) {
     .container{
         .cards{
-            width: 500px;
-            display: flex;
-            transform: translateY(-50px);
+            transform: translateX(0);
+            position: absolute;
+            top: -40%;
+            width:50%;
             .card_front{
+                transform: translateX(0);
                 .card_front_content{
                     img{
                         width: 50px;
@@ -31,11 +33,37 @@
                 }
             }
             .card_back{
+                position: absolute;
+                top: -55%;
+                transform: translateX(60px);
+                z-index: -1;
                 .card_back_content{
-                    top: 40%;
+                    top: 43%;
+                    
                 }
             }
         }
     }
 }
 
+@media (max-width:425px) {
+    .container{
+        .cards{
+            width: 70%;
+            top: -35%;
+            left: 10%;
+            .card_front{
+                .card_front_content{
+                    .card_front_info{
+                        h3,p{
+                            font-size: 1rem;
+                            
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+    

@@ -6,7 +6,7 @@ import { FormBuilder, Validators } from '@angular/forms';
   selector: 'app-details-form',
   templateUrl: './details-form.component.html',
   styleUrls: ['./details-form.component.scss','details-form-card.component.scss',
-  'details-form-card.responsive.component.scss']
+  'details-form-card.responsive.component.scss','details-form.responsive.component.scss']
 })
 export class DetailsFormComponent {
   name!:string;
@@ -18,7 +18,7 @@ export class DetailsFormComponent {
   registerForm = this.fb.group({
       name:['', Validators.required],
       number:['',[Validators.required,this.cardNumberValidation]],
-      month:['', [Validators.required, Validators.pattern('^(0[1-9]|1[0-2])$')]],
+      month:['', [Validators.required,Validators.pattern('^(0[1-9]|1[0-2])$')]],
       year:['', [Validators.required ,this.yearValidation]],
       cvc:['', [Validators.required,this.cvcValidation]],
   });
@@ -82,6 +82,15 @@ export class DetailsFormComponent {
     }
     return null;
   }
+  digitsLimit(maxDigits:Number){
+    return (control:any) => {
+      const inputValue = control.value.toString();
+      if (inputValue.length > maxDigits) {
+        return { maxDigits: true };
+      }
+      return null;
+    };
+  } 
   
   
 }

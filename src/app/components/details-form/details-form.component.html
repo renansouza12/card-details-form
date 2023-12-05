@@ -40,7 +40,7 @@
         <div class="field_input">
             <label for="card_number">card number</label>
             <input type="text" [(ngModel)]="cardNumber" id="card_number" placeholder="e.g 1234 5678 9123 0000"
-                formControlName="number" [class.invalid]="registerForm.get('number')?.invalid && 
+                formControlName="number" maxlength="19" [class.invalid]="registerForm.get('number')?.invalid && 
             (registerForm.get('number')?.dirty || 
             registerForm.get('number')?.touched || isSubmitted)">
             <span class="erro" *ngIf="registerForm.get('number')?.invalid && 
@@ -53,7 +53,7 @@
                 <div class="field_date">
                     <div class="field_month">
                         <input class="input_date" [(ngModel)]="month" type="text" name="month" id="month"
-                            placeholder="MM" formControlName="month" [class.invalid]="registerForm.get('month')?.invalid && 
+                            placeholder="MM" formControlName="month" maxlength="2" [class.invalid]="registerForm.get('month')?.invalid && 
                         (registerForm.get('month')?.dirty || 
                         registerForm.get('month')?.touched || isSubmitted)">
                         <span class="erro" *ngIf="registerForm.get('month')?.invalid && 
@@ -62,7 +62,7 @@
                     </div>
                     <div class="field_year">
                         <input class="input_date" [(ngModel)]="year" type="text" name="year" id="year" placeholder="YY"
-                            formControlName="year" [class.invalid]="registerForm.get('year')?.invalid && 
+                            formControlName="year" maxlength="2"  [class.invalid]="registerForm.get('year')?.invalid && 
                         (registerForm.get('year')?.dirty || 
                         registerForm.get('year')?.touched || isSubmitted)">
                         <span class="erro" *ngIf="registerForm.get('year')?.invalid && 
@@ -76,7 +76,7 @@
             <div class="cvc_details">
                 <label for="cvc">cvc</label>
                 <input class="input_date" [(ngModel)]="cvc" type="text" name="cvc" placeholder="e.g 123"
-                    formControlName="cvc" [class.invalid]="registerForm.get('cvc')?.invalid && 
+                    formControlName="cvc" maxlength="3" [class.invalid]="registerForm.get('cvc')?.invalid && 
                 (registerForm.get('cvc')?.dirty || 
                 registerForm.get('cvc')?.touched || isSubmitted)">
                 <span class="erro" *ngIf="registerForm.get('cvc')?.invalid && 
@@ -86,9 +86,5 @@
         </div>
         <button>Confirm</button>
     </form>
-
-    <div *ngIf="confirmationMsg" class="confirmation_message">
-        <app-confirmation-msg (confirmation)="btnConfirmation()"/>
-    </div>
-
+        <app-confirmation-msg   *ngIf="confirmationMsg" (confirmation)="btnConfirmation()"/>
 </div>
