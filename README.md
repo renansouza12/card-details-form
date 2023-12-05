@@ -1,27 +1,101 @@
-# CardDetails
+# Frontend Mentor - Interactive card details form solution
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.7.
+This is a solution to the [Interactive card details form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/interactive-card-details-form-XpS8cKZDWw). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Development server
+## Table of contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-## Code scaffolding
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Overview
 
-## Build
+### The challenge
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Users should be able to:
 
-## Running unit tests
+- Fill in the form and see the card details update in real-time
+- Receive error messages when the form is submitted if:
+  - Any input field is empty
+  - The card number, expiry date, or CVC fields are in the wrong format
+- View the optimal layout depending on their device's screen size
+- See hover, active, and focus states for interactive elements on the page
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Screenshot
 
-## Running end-to-end tests
+![](./../../../assets/img/screenshot.png)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Links
 
-## Further help
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://gregarious-crumble-17bc55.netlify.app/)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## My process
+
+### Built with
+
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- CSS Grid
+- [Angular](https://angular.io/) - JS library
+- [Sass](https://sass-lang.com/) - Css librar
+
+### What I learned
+
+I learned how to use ReactiveForms , how to import the module how to create in the  component.ts and link to component.html . How to add Validators and create custom Validators and display an erro message.
+
+```app.module.ts
+import { ReactiveFormsModule } from '@angular/forms';
+
+@NgModule({
+  declarations: [],
+  imports: [
+    ReactiveFormsModule
+  ],
+  providers: [],
+  bootstrap: []
+})
+export class AppModule { }
+ 
+```
+```details-form.component.html
+    <form [formGroup]="registerForm">
+          <input  name="name" formControlName="name" [class.invalid]="registerForm.get('name')?.invalid && 
+            (registerForm.get('name')?.dirty || 
+            registerForm.get('name')?.touched || isSubmitted)">
+
+     <span class="erro" *ngIf="registerForm.get('name')?.invalid && 
+            (registerForm.get('name')?.dirty || 
+            registerForm.get('name')?.touched || isSubmitted)">Erro message</span>
+    </form>
+
+```
+```details-form.component.ts
+     registerForm = this.fb.group({
+      name:['', Validators.required],
+  });
+}
+```
+
+
+### Useful resources
+
+- [Reactive form Angular](https://angular.io/guide/reactive-forms) - This helped me giving me a view about the reactive form.
+- [Video about reactive forms Angular](https://www.youtube.com/watch?v=U9Xo0wXZIAg) - This video helped me to understand how the reactive forms works and how to add validators and display a custom erro message.
+
+**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+
+## Author
+
+- Website - [Renan Souza](https://www.your-site.com)
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+
