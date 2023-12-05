@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](./../../../assets/img/screenshot.png)
+![](./src/assets/img/screenshot.png)
 
 ### Links
 
@@ -83,7 +83,7 @@ export class AppModule { }
      registerForm = this.fb.group({
       name:['', Validators.required],
   });
-}
+
 ```
 
 
@@ -97,5 +97,5 @@ export class AppModule { }
 ## Author
 
 - Website - [Renan Souza](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Frontend Mentor - [@renansouza12](https://www.frontendmentor.io/profile/renansouza12)
 
